@@ -130,7 +130,7 @@ inline std::string parenthed(const std::string& s)
 /// removes double quotes
 inline std::string remove_dquote(const std::string& s)
 {
-    istring::size_type len = s.length();
+    int len = s.length();
     if( len < 2)
         return s;
     if(s[0] == '"' && s[len-1] == '"')
@@ -150,7 +150,7 @@ inline std::string remove_external_blanks(const std::string& in)
     if(!in.length())
         return in;
     std::string s = in;
-    istring::size_type beg = 0, end = s.length();
+    int beg = 0, end = s.length();
     for(; beg < end; ++beg)
         if(s[beg] != ' ' && s[beg] != '\t')
             break;

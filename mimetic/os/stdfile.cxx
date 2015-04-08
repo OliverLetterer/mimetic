@@ -75,7 +75,7 @@ uint StdFile::read(char* buf, int bufsz)
     int r;
     do
     {
-        r = (int)::read(m_fd, buf, bufsz);
+        r = ::read(m_fd, buf, bufsz);
     } while(r < 0 && errno == EINTR);
     return r;
 }

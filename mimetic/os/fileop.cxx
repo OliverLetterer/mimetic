@@ -55,7 +55,7 @@ uint FileOp::size(const string& fqn)
 {
     struct stat st;
     if(::stat(fqn.c_str(), &st) == 0)
-        return (uint)st.st_size;
+        return st.st_size;
     else
         return 0;
 }
@@ -65,7 +65,7 @@ uint FileOp::ctime(const string& fqn)
 {
     struct stat st;
     if(::stat(fqn.c_str(), &st) == 0)
-        return (uint)st.st_ctime;
+        return st.st_ctime;
     else
         return 0;
 }
@@ -75,7 +75,7 @@ uint FileOp::atime(const string& fqn)
 {
     struct stat st;
     if(::stat(fqn.c_str(), &st) == 0)
-        return (uint)st.st_atime;
+        return st.st_atime;
     else
         return 0;
 }
@@ -85,7 +85,7 @@ uint FileOp::mtime(const string& fqn)
 {
     struct stat st;
     if(::stat(fqn.c_str(), &st) == 0)
-        return (uint)st.st_mtime;
+        return st.st_mtime;
     else
         return 0;
 }
